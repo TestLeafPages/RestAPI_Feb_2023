@@ -1,0 +1,183 @@
+Agenda For the Day:
+=====================
+
+one to place to another in Newyork 
+
+mismandled and then once after reaching my destination
+Assembling
+
+Advantages:
+============
+Reuse
+Time conservation
+Easy adaptation
+Based on the land measurement i can add /remove panels
+Enhancement can be done easily
+Cost of Maintainence  is low
+Uniformity
+
+Customer satisfaction
+
+Can Normal Engineers construct/ work on panel framewor
+They have to gain experience and Knowledge to construct panels
+
+
+Framework helps us to complete the assigned works/Tasks in a easier way with less time consumption.It ensures low cost of maintainence and reusablitiy
+
+Matschie Framework
+==================
+
+Developed by Testleaf and it is open source
+
+Purpose of Matchie:
+===================
+To Automate only the API's and it based on BDD
+
+People who can work on Matchie:
+==============================
+1) Manual Testers who are just learning Automation and want to convert to Automation 
+2) People who work on BDD framework
+
+Features  and libraries/tools available in Matchie:
+==================================================
+
+1) BDD -Cucumber
+2) Build Tool -Maven
+3) Execution/Runner -TestNG
+4) Reporting - Allure Report
+
+Features:
+=========
+1) BDD based + Services
+BDD based- Postive cases and Business driven
+Services --Negative Testcases
+
+2) Low code Framework
+
+Where we can implement Matchie Framework:
+==========================================
+1) Only for the API based Automation
+2) Smaller Projects 
+
+Automate Incident Management  by Individual without framework:
+==============================================================
+Create Incident --Ram
+Update Incident -Aravind
+Delete Incident -Sudarshan
+
+There wont be proper Standard
+
+Automation Framework
+=====================
+Framework Provides or sets the standard to achieve our Automation task easily and common to group of people who works
+
+Common Advantages of Automation Framework:
+===========================================
+
+1)Uniformity
+2)Reusablity
+3)Time Conservation
+4)Maintainence
+5)Adaptability
+
+Advantages of Matchie Framework:
+================================
+1)Low code BDD based Framework 
+2)Easy Implementation
+3)Reporting is achieved without any coding
+4)Build with open source Libraries and Tools
+
+2) Dependencies in Pom.xml
+Most Dependencies for Allure Report --No code for allure reporting
+
+3) Folder Structure and components 
+
+src/test -- Not going to use in the Production or not moving to production
+
+Hooks and Background
+
+Background:
+
+purpose:Executes before each and every scenario
+Scope: only for a particular feature file
+
+Hooks : 
+
+Purpose:Executes before each and every scenario
+Scope : For all Feature files
+
+
+4) Execution and Generating Reports
+
+Execution
+===========
+
+Right Click on the Project  --->Run As -Maven Test
+
+Report Generation:
+====================
+
+1) Go to the project folder where pom.xml is present
+2) Open Command Prompt from the same path 
+3) Give the command to generate Allure Report
+
+mvn allure:serve
+
+
+Classroom Session:
+==================
+1) Import framework
+2) Execute as Maven Test
+3) Generate Allure report
+
+
+
+While executing mvn allure:serve error is displayed as
+mvn is not recognised
+
+
+1) Download Maven
+https://maven.apache.org/download.cgi
+apache-maven-3.9.1-bin.zip
+
+2) Extract the Zip File and paste the maven folder in the desired location (preferably program files)
+
+3) Open the bin folder from the maven file and copy the path 
+
+Example path:
+===============
+C:\Program Files\apache-maven-3.9.1-bin\apache-maven-3.9.1\bin
+
+4)Start menu -->Type environment --Edit Systeme Environment
+
+5) Under System varaibles --Click on Path
+
+6) Click on new and paste the copied maven path
+
+7) Open new command prompt type mvn -version --maven version will be displayed
+
+8) Open new command prompt and run mvn allure:serve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+Agenda For the Day:
+===================
+
+Requests with Query Param and Traversing through Response:
+==========================================================
+
+1) Create Incident with File body
+2) Get all incidents with Query Param
+3) Update Incident with Query param
+4) Delete Incident
+
+
+Assertions :
+============
+Hamcrest -equals,contains and hasitem
+
+1) 
+2)
+
+
+
+
+Chaining of Requests:
+=====================
+Create,Update and Delete
+
+CRUD operations with data dynamically in the run time
+
+To Implement CRUD in RestAssured
+
+Basic Inheritance concept in java
+Few implementations in TestNG
+
+Assignment for the week:
+========================
+
+Implement chaining of requests in Jira with RestAssured for
+
+1) Create,Update and Delete issue.
+2) Assert using Hamcrest  status code ,Status line for Delete Request
+
+Note:
+=====
+For Authentication use the preemptive().basic
+
+RestAssured.authentication=RestAssured.preemptive().basic("YourEmailID", "YourJiraKey");
+
+
+				
+
+
+
+
+
+
+

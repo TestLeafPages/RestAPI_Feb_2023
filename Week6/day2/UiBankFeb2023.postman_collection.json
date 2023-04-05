@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "dafa662d-2937-49ef-b770-fe04d5767650",
+		"name": "UiBankFeb2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17709036"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resp=pm.response.json();\r",
+							"var id = resp.id;\r",
+							"pm.globals.set(\"id\",id);\r",
+							"console.log(id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "uibank-api.azurewebsites.net"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,bn;q=0.7,ja;q=0.6"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://uibank.uipath.com"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "referer",
+						"value": "https://uibank.uipath.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"FebApiuser\",\"password\":\"Eagle@123\"}"
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/users/login",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "uibank-api.azurewebsites.net"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8,bn;q=0.7,ja;q=0.6"
+					},
+					{
+						"key": "authorization",
+						"value": "{{id}}"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://uibank.uipath.com"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "referer",
+						"value": "https://uibank.uipath.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"friendlyName\": \"Test133\",\r\n    \"type\": \"savings\",\r\n    \"userId\": \"64290731ba9f8a0047adacfc\",\r\n    \"balance\": 100,\r\n    \"accountNumber\": 23767121\r\n}"
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/accounts",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

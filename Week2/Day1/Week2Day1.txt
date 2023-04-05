@@ -1,0 +1,69 @@
+Today's Agenda:
+===============
+
+1) Variables in Postman
+
+Types of variables:
+==================
+1) Global
+
+User Registration API --Unique User ID will used acrosss multiple request
+
+Scope -- Will across the collections or across multiple requests with in collection
+
+1) In menu Click on Environment
+2) Click on Globals
+
+How to set the value for Global variable
+
+pm.globals.set("systemID", "variable_value");
+pm.globals.set("systemID", sys_id);
+// Variable value -Name of the variable created in Globals
+// Variable value -- Value of sysid which has been extracted from response and saved as a variable
+// Set variable key wihin double quotes 
+// Variable value should not have double quotes
+
+Use the Global Variable in the Request
+
+https://dev71160.service-now.com/api/now/table/incident/{{systemID}}
+
+2) Environmental Variable
+
+On Average we are testing atleast in 3 Environment
+
+Data
+IP
+Url
+Credentials
+DB differs
+===============================================
+
+Url
+Credentials
+
+2 Environments -- Testing and Stagging
+
+350 API's
+
+Classroom session: Change Requests
+==================================
+
+1) Duplicate the Collection --3 Post,Put and Delete
+2) Create a Global variable for sysid and and save the extracted sysid to global variable
+3) Call the global sysid in url for put and Delete method
+4) Set the Environment variable for Url in all three requests
+
+3) Collection
+==============
+Scope of this variable is within the collection
+
+4) Local 
+========
+Scope of the Local variable is specific to the request
+
+5) Data:
+==========
+Json and CSV 
+Only one file allowed at the time
+
+2) Chaining of Requests and collection Runner

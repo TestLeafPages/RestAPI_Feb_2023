@@ -1,0 +1,171 @@
+Today's Agenda:
+===============
+
+1) Schema Validation
+2) Wiremock
+3) Swagger
+
+Schema Validation:
+==================
+90 % validating the values in response
+
+What is schema validation ?
+
+Validating the presence of keys in the response
+
+In the future builds if the keys are removed schema validation fails
+
+Steps to do  Schema Validation
+===============================
+
+1) Add the Depedency for Json Schema validation in pom.xml
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>5.3.0</version>
+    <scope>test</scope>
+</dependency>
+
+2) Convert response to json schema (online converter)
+https://www.liquid-technologies.com/online-json-to-schema-converter
+
+3) Copy the Json schema and paste it in a file (located in your project folder) and save it in the json format say validateschema.json
+
+4) Specify the Path of the schema file to be validated
+
+5) Assert the Json schema with response 
+
+response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaFile));
+
+Wiremock:
+========
+Mimics some Action
+Stunt Doubles
+Test Doubles
+
+Integration testing 
+
+Stub and Driver
+
+Front end application ---Billing system
+
+Front end application -ready
+Billing system -- Not ready
+
+Simulator --mimics the Billing system
+
+
+Mocking API's:
+=============
+
+Designing testscripts eventhough the application is not ready 
+
+Fake --Replicating the system exactly --Costlier
+Stub --Giving you the Static response
+mock --Fake+Stub( Dynamic Templates)
+
+
+Insprint Automation
+
+Dev In progress , Yet to start the development
+
+API documentation
+
+Developing the script with the mocking servers and once the application is ready ,we will test against actual application
+
+Service providers:powermock ,easymock and mockito
+
+Wiremock
+==========
+
+Preconditions:
+==============
+
+1) Go to WireMock documentation --https://wiremock.org/docs/
+2) Download and Install Wiremock Server--https://wiremock.org/docs/download-and-installation/
+3) Make the wiremock server up
+java -jar wiremock-jre8-standalone-2.35.0.jar
+4) Add the dependencies for wiremock
+
+<!-- https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock -->
+<dependency>
+    <groupId>com.github.tomakehurst</groupId>
+    <artifactId>wiremock</artifactId>
+    <version>3.0.0-beta-7</version>
+    <scope>test</scope>
+</dependency>
+
+
+
+1) Stub
+2) Recording in wiremock
+3) Dynamic Templates
+
+Steps for Recording:
+====================
+
+1) Access --https://wiremock.org/docs/record-playback/ for record and play back
+2) Access --http://localhost:8080/__admin/recorder any browser
+3) Add servicenow url in wiremock recorder
+https://dev140572.service-now.com
+
+Dynamic Templating preconditions
+=================================
+
+1)Run the wiremok server with below commands for dynami templating
+
+java -jar wiremock-jre8-standalone-2.35.0.jar --global-response-templating
+
+2) Ref document https://wiremock.org/docs/response-templating/
+
+3) Place the template in the mapping folder of wiremock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tomorrow:
+=========
+1) Cookies
+2) Project Day
+3) Sharing the recording --GraphQL

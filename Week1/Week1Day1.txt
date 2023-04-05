@@ -1,0 +1,73 @@
+
+1) Fundamentals of API
+2) How to start testing API's with postman
+
+API :Application Programming Interface
+
+SOAP :Supported format XML
+Only Post and Get Methods
+
+REST : Supports Json,XML and text
+Mainly used methods: Post,Get,Put,Patch and Delete
+
+CRUD --Create ,Read,Update and Delete
+
+Http methods:
+============
+
+Post --Create data
+Get --read data
+Delete- Delete data
+Update --
+
+Put- -- Update all 
+Patch-- update particular
+
+Http Headers:
+================
+Content-Type-- In which format the request is send
+Accept-- In which format the response is recieved
+
+
+Query Parameters:
+=================
+To filter the response parameter
+
+Path Parameter:
+=================
+That exact resource
+
+
+5 Step Process to Test API:
+===========================
+
+1) Requirement
+
+In Service now -Rest API Explorer as Documentation
+
+2) Server + Port+ Resources
+
+https://dev71160.service-now.com --Server+Port
+/api/now/table/incident--Resources
+
+incident -Path Parameter
+
+
+3) Add Request
+
+Headers-
+Authorization	
+Request Body
+
+4) Send Request
+
+Post validations in Postman --Test Tab
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+Recap of Yesterday's Session
+
+Quick Catch Up on Why Postman to Test API and Limitations of Postman
+
+Postman is most used tool for testing API's (Manual and Semi Automation)
+
+Insomania , Postwoman
+
+1) Collection Runner
+2) Read data from the files
+3) Have reports in postman
+4) Integrate with Jenkins
+
+Newman is the commandline tool for postman
+
+Limitations:
+=============
+1) Parallel execution is not possible
+2) CSV and Json .Only one file
+3) execute collection from Commandline with newman
+4) Integrate with newman for jenkins
+
+chaining of requests
+
+Today's Learning
+==================
+1)Get,Put,Patch and Delete for incidents
+
+a)Validate response code and  Assert response body
+b)Validate Response time in collection Level
+c)Traversing through response and extract the values
+
+https://jsonpathfinder.com/
+
+1) Open the https://jsonpathfinder.com/ in browser
+2) Copy the response from create incident and paste it
+3) Search for sys_id and click on Sys_id
+4) Copy  the response from json path finder and replace x with response variable
+
+x.result.sys_id
+resp.result.sys_id;
+5) Print in the console
+console.log(sys_id)
+
+
+
+
+
+Class Room Session:
+===================
+ https://dev71160.service-now.com/api/now/table/change_request
+1) Create a change request with response time validation.Extract the value of change request number
+2) Update Change request and validate short description value is present in response
+3) Delete the change request and validate response code
+
+
+
+--------Class Room Practice Session -------------------------
+
+2)Query Parameters
+
+Filter the response
+Query parameters are application specific
+
+Servicenow (Rest API Explorer)
+===============================
+select the values for sysparm_fields and sysparm_limit
+
+Postman:
+========
+Param Tab --Add Query parameters
+
+
+
+a) Get and Post request for Incidents
+
+------------Class Room Practice Session-------------------------
+For Change Request Add the query parameters for 
+
+Get and Post request 
+
+
+3) Request/Response in XML Format and Traverse XML Response
+
+Request Format  --Content type
+Response Format --Accept 
+
+Validate XML Response:
+======================
+
+1) Convert XML to json using snippet
+
+Snippet name Response Body :convert XML body to a json object
+var jsonObject = xml2Json(responseBody);
+
+2) Traverse through converted json response
+https://codebeautify.org/xmltojson
+
+3) Copy the json response and paste it in https://jsonpathfinder.com/
+
+
+
+
+4) Introduction to collection runner and run API's from collection
+
+Collection runner --Run all requests under a collection in a single click with specified number of iteration sequentially
+
+5) Export/Import Postman collections
+
+
+6) Sample API Documentation
+
+
+
+
+
+
+
+
+

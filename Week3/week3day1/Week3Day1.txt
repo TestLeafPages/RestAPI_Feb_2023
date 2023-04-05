@@ -1,0 +1,189 @@
+Agenda For the day :
+====================
+
+Recap:
+
+1) OAuth
+Open Auhorization --> One of the method/Type for Authentication
+
+Restricted access with multilayer authentication
+
+Scenario 1:
+============
+
+Any Musical App(Spotify listen to songs)
+
+Step 1:
+=======
+Gmail username and Password --Gmail will validate my username and password --Authentication
+
+Step 2:
+=======
+Google will ask Spotify Authentication Server(OAuth Server) -- To will the access token (OAuth Access Token)
+
+Step 3:
+=======
+Google uses the access token to select the desired songs to play from spotify
+
+Scenario:2
+==========
+
+HDFC --Request for Credit card from the Mobile App
+
+1) Login to HDFC ( validates the user --Authenication)
+2) User Requests for a Credit card
+3) From HDFC request will be initiated to Cibil OAuth Server(third party) to generate access token
+4) HDFC will request to a Cibil score check (
+
+In Real Time :
+===============
+Postman --Client
+Servicenow --Server
+
+To get the OAuth Access Token 
+=============================
+
+1) Developer will provide you the Access token
+2) You will be given a API from which , access token can be generated
+3) Generate Access token via Postman Client
+
+
+Settings for OAuth in Service now (Real Time Developement team /Admin)--Client and Client Secret
+============================================================
+1)  Login to Service now
+2) Filter Navigator type OAuth
+3) Select Application Registry from the displayed options
+4)  Click on new and click Create an OAuth API endpoint for external clients
+5) Give any meaningful name
+6) Copy the Client ID 5bf399cd8be9e1109527a1b36d233199
+7) Give the Redirect url (to which client access token is sent back)
+https://www.getpostman.com/oauth2/callback
+8) Once again serach with name given in point 5  and copy the client secret - }xXg.opqmn
+
+Generate Access Token and Use the same in Postman
+==================================================
+
+1) Go to Collection and Select Authorization Type as OAuth 2 and Add auth data to --Request Headers
+2) Grant Type --Authorization code
+3) Call back url --https://www.getpostman.com/oauth2/callback
+4) Auth url -- To access the Service now OAuth Server
+https://dev140572.service-now.com/oauth_auth.do
+5) Access Token Url --To request for access token to the OAUth server and receive it  --https://dev140572.service-now.com/oauth_token.do
+6) Client ID and Client Secret From Service Now (Application Registry)
+7) Any free text for State
+8) Send as Basic header
+9) For the First time give the Service now username and password
+10) Click on use Token
+
+Token Added to the request:
+============================
+Click on Use Token , OAUTH Token will be added to the headers as Authorization
+
+iVFhPILL5YHzwBLAhL2eO63ItrMPOY_ZW_iffOHuS4pKhNJXb-h3ChMMpyukUIYnBvpwgBI61szre77UHVgl-w 
+
+
+API's to generate the Access Token
+==================================
+Refer the below documentation
+
+https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0778194
+
+Class room Session:
+====================
+Generate OAuth Token 
+use the OAUth token to create incident
+
+Url:https://dev140572.service-now.com/
+username- admin
+password- P-qQ7@umSYz8
+
+2) Introduction to RestAssured
+
+What is Rest Assured 
+
+Rest Assured -- Library /tool to Automate Rest API's which is similar to Selenium for UI
+
+Java  --Rest Assured
+C#    --Rest Sharp
+python --pyrest
+
+http client
+ok http
+Unirest
+
+Why RestAssured ?
+
+1) Mainly designed for Automation Testers
+2) Inbuild assertions
+3) Less Coding and equivalent to BDD style
+
+given() --Preconditions
+when()  - Test Condition
+Then() --- Post condition
+
+
+2) Environmental Setup:
+
+IDE - Eclipse
+Build Tool -Maven
+API --Rest Assured
+Runner /execution Framework --TestNG
+
+3)Installation in eclipse
+
+1) Create a maven Project:
+========================
+
+a) File --New Project---Maven Project
+b) Enable create simple project checkbox
+c) Enter the Group ID and Artifact ID
+d) Click on Finish
+
+2) Add the dependencies for RestAssured and TestNG:
+====================================================
+
+<dependencies>
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>5.3.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.5</version>
+</dependency>
+</dependencies>
+
+3) Create a New package and New Class:
+=========================================
+
+
+Assignment For the day:
+======================
+
+Create a Change request using Rest Assured
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

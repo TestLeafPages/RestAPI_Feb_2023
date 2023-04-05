@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "6f59a711-51b5-48b3-849c-35d7623d5417",
+		"name": "Jira",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17709036"
+	},
+	"item": [
+		{
+			"name": "Create Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resp=pm.response.json();\r",
+							"console.log(resp.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"project\": {\r\n            \"key\": \"TS\"\r\n        },\r\n        \"summary\": \"create issue in Test project\",\r\n        \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n        \"issuetype\": {\r\n            \"name\": \"Bug\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testjirafeb2023.atlassian.net/rest/api/2/issue/",
+					"protocol": "https",
+					"host": [
+						"testjirafeb2023",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "ATATT3xFfGF0HaxeACZxbPqcC_hGbAGvR1nDfxlvTKLwUBsumHNbeLmVtRcSghFRFXxtytrC_a1EVOORE2cZbzTHCRcjpWFaQeTBxrm89U9Z1k8yqoCxDhv82ZbVxe-yvGYxPAgzZjKKnTA9r8evGONh69MnaDJ-nJVt7WKikeyrNVKCk6W1Zog=440F541C",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Feb2023restAPI@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

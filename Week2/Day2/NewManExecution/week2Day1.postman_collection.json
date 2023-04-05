@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "370d319c-ae25-414b-bf6e-f38472faa8bd",
+		"name": "week2Day1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17709036"
+	},
+	"item": [
+		{
+			"name": "Create Incident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test.skip(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Incident Preifx Validation\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"INC\");\r",
+							"});\r",
+							"\r",
+							"var resp=pm.response.json();\r",
+							"var sys_id=resp.result.sys_id;\r",
+							"console.log(sys_id)\r",
+							"//pm.globals.set(\"systemID\", \"variable_value\");\r",
+							"pm.globals.set(\"systemID\", sys_id);\r",
+							"// Variable key -Name of the variable created in Globals\r",
+							"// Variable value -- Value of sysid which has been extracted from response and saved as a variable\r",
+							"// Set variable key wihin double quotes \r",
+							"// Variable value should not have double quotes\r",
+							"\r",
+							"pm.globals.set(\"variable_key\", \"variable_value\");\r",
+							"\r",
+							"var IncNum=resp.result.number;\r",
+							"\r",
+							"pm.collectionVariables.set(\"number\", IncNum);\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"{{short_description}}\",\r\n    \"short_description\": \"{{description}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/now/table/{{inc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"{{inc}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Incident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 for update\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var num=pm.collectionVariables.get(\"number\");\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(num);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"{{ShortDescrirptionUpdate}}\",\r\n    \"description\": \"Description updated via postman for second time\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/now/table/{{inc}}/{{systemID}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"{{inc}}",
+						"{{systemID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetIncident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 for update\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var num=pm.collectionVariables.get(\"number\");\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(num);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/now/table/{{inc}}/{{systemID}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"{{inc}}",
+						"{{systemID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Incident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204 for Delete\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/now/table/{{inc}}/{{systemID}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"{{inc}}",
+						"{{systemID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{pwd}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 3000 ms in collection level\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inc",
+			"value": "incident",
+			"type": "string"
+		},
+		{
+			"key": "number",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

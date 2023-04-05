@@ -1,0 +1,64 @@
+Agenda for the Day :
+====================
+
+Makaia Framework
+================
+
+API + UI Automation
+
+API --Covering all the Functional Flows
+UI --Automating End to End Tests
+
+Loosely coupled-
+
+API Automation:
+===============
+
+1) API -RestAssured
+2) Runner Framework-TestNG
+3) Reporting - Extent Reports
+4) Data Driven -- Using Json Files
+
+UI Automation:
+===============
+
+1) UI -Selenium
+2) Runner Framework -- TestNG
+3) Reporting - Extent Reports
+4) Data Driven -- Using Excel files (Apache Poi)
+
+Build Tool -- Maven
+
+only UI
+only API+UI
+only API 
+
+BDD can be implemented with Cucumber
+
+Dependencies in pom.xml:
+========================
+
+Folder structure:
+===================
+
+lib.listeners
+
+--WebDriver Listener
+--TestNG Listener
+
+lib.rest(API)
+
+--Base class
+--PreAndTest
+
+lib.selenium(UI)
+
+
+
+
+
+
+
+
+
+

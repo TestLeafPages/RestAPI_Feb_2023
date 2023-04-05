@@ -1,0 +1,163 @@
+Agenda for the day:
+===================
+
+1) RestAssured with Cucumber
+==============================
+
+Colloboratively as Team -- BA mDvelpers and Testers all work as a Single Team
+
+Feature File --Features and Scenarios with which we will be proceeding with the manual testing
+
+Iterative Model --Agile
+
+Automation with BDD-
+
+
+Java-Cucumber
+C# -Spec flow
+python-Behave
+
+BDD Framework-Serenity
+
+Advantages:
+============
+Eliminate miscommunication
+Human readable --gherkin
+Eliminate ambugity
+
+Keywords:
+=========
+Feature : User story /Requirement
+Scenario: Testcases
+Given : Precondition
+When : Testcondition
+Then : Post condition
+And : Combine the repeated steps
+
+Given: Add baseuri
+Given: Add Auth
+
+Given: Add baseuri
+And: Add Auth
+
+But:Negative scenarios
+
+Scenario outline:Same Testcase for Multiple Testdata
+Examples:
+|Data|
+|Test1|
+|Test2|
+
+Background:
+Common steps for all the scenarios will be placed in the back ground
+
+Installation of cucumber:
+========================
+Add Maven Depedencies:
+======================
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.10.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.10.1</version>
+</dependency>
+
+Folder Structure:
+==================
+
+packages:
+
+1)features
+
+a)Right click on features package--> New Option -File -Create a feature file say incident.feature(mandatory add the extension feature)
+
+b)Add the Testcases in the feature file:
+
+2)steps
+Create a class file and write the implementation for the steps in the feature file 
+
+Annotate each and every method in the step definition equal to the keyword in the steps (feature file)
+
+3)runner
+
+a) Create a new runner class file 
+
+public class RunTests extends AbstractTestNGCucumberTests
+
+b) Add the cucumber options 
+and execute the tests from runner
+
+Classroom session:
+==================
+1) Change Request
+
+a) Create Change request with string body
+b) Get all change request with QP
+
+
+1) Scenario Outline with examples
+Run the Scenario(Testcases with multiple testdata)
+Examples --Multiple testdata
+
+Note-- Testdata in example is applicable for a complete  scenario
+
+
+2) back ground
+
+To have the preconditions for all scenarios/scenario outline with in the feature file
+
+Scope is with in the feature
+
+3) Data table
+Multiple testdata in the step Level
+
+https://cucumber.io/docs/bdd/
+
+Difference between preemptive and non preemptive
+
+
+Assignment for the Day:
+=======================
+
+1) Create change Request with multiple data files
+2) Get All incidents with Multiple Query Parameters (Use data table)
+3) Implement background for all the scenarios having common precondtions
+4) Execute the Scenarios based on the tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dependencies:
+=============
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.10.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.10.1</version>
+</dependency>
+                                                                                                                                                                                                                                                                                                                                                                             

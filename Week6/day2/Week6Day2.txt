@@ -1,0 +1,69 @@
+
+Agenda for the day :
+===================
+Swagger
+
+--One of the documentation tool
+
+Who will design the API documentation ?
+
+Developer
+Busniess Team --(BA+Product Team)
+Worst case QA will prepare API document only for Critical API
+
+Documentation tools:
+
+APIGEE
+Postman
+Pdf
+
+Swagger Editor -- To Design the API documentation
+Swagger Hub -- Publish API Document as web page
+
+
+Cookies
+How to use cookies for Authentication
+79A61B7B3540F0EA4F24BE4FC0D429BF
+
+
+Project Day
+===========
+
+1) How to Test API's when documentation is not given
+2) How to intercept the API calls in Browser
+3) How to Analyze the API calls
+4) Implementing the same in Postman
+5) Implementing the same in RestAssured (makaia)
+
+
+Steps intercept API:
+======================
+
+1) Open Chrome Devtools (F12,ctrl+shift+i) and click on network tab
+2) In the Filter click on "Fetch/XHR"
+3) Enter the Username-FebApiuser and Password-Eagle@123
+
+Import Request to Postman:
+==========================
+
+1) Select the Request in the browser
+2) Right Click on the request --Copy--Copy as cURL(bash)
+3) Go to Postman --Click  Import and paste the request
+4) Save it in a collection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
